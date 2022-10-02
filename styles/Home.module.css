@@ -1,0 +1,122 @@
+.gameContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width:100vw;
+    height:100vh;
+    position:relative;
+}
+
+.gameTable{
+  table-layout: fixed;
+}
+
+.gameCell{
+  font-size: 35px;
+  border: 1px solid white;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  font-family: 'Press Start 2P', cursive;
+  overflow: hidden;
+}
+
+.button{
+  font-size: 20px;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid white;
+  background-color: #000;
+  color: #fff;
+  cursor:pointer;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+.button:hover{
+  background-color: #fff;
+  color: #000;
+}
+.spinButton{
+  composes: button;
+  width:150px;
+  height: 47px;
+}
+
+.cashOutButton{
+  composes: button;
+  height: 47px;
+  width: 100px;
+  margin:0;
+}
+.cashOutButtonWrapper{
+  position: absolute;
+  transform-origin: center;
+  top:150px;
+  margin:0;
+}
+
+.main{
+  width: 100%;
+  height:100vh;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width:500px;
+  height:500px;
+  position:relative;
+}
+
+.title{
+  margin:0
+}
+
+.gameInformation{
+  position: absolute;
+  top:0;
+  right:50px;
+}
+
+.gameInformation > p{
+  margin:0;
+  color: orangered;
+}
+
+.gameCellValueContainer{
+  position: relative;
+  animation: spin 0.5s infinite;
+  animation-timing-function: cubic-bezier(0.2, 0.4, 0.165, 0.9);
+}
+
+@keyframes spin {
+  0% { bottom:-150px;  }
+  50% { bottom:0px; }
+  100% { bottom: 150px; }
+}
+
+.spinButtonDisabled{
+  composes: spinButton;
+  cursor: not-allowed;
+  background-color: #fff;
+  color: #000;
+  opacity: 0.5;
+}
+
+.cashOutButtonDisabled{
+  composes: cashOutButton;
+  cursor: not-allowed;
+  background-color: #fff;
+  color: #000;
+  opacity: 0.5;
+}
